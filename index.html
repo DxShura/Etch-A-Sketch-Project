@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+
+	<body>
+
+		<button id="newGrid">New grid</button>
+		<button id="erase">Erase grid</button>
+		<button onclick="rainbow()">Rainbow Color</button>
+		<button onclick="bGCWhite()">White Color</button>
+		<div id="container"></div>
+
+		<script>
+
+		function backColor(){
+			let colorOne = Math.floor(Math.random() * 254);
+			let colorTwo = Math.floor(Math.random() * 254);
+			let colorTree = Math.floor(Math.random() * 254);
+			return 'rgb('+ colorOne + ', ' + colorTwo + ', ' + colorTree + ')';
+		}
+
+		function rainbow(){
+			let divRainbow = document.querySelectorAll('.content');
+			removeHovered(divRainbow);
+			divRainbow.forEach((divsRainbow) => {
+				divsRainbow.addEventListener('mouseenter', () => {
+					divsRainbow.classList.remove('backGroundWhite');
+					divsRainbow.style.backgroundColor = backColor();
+				});
+			});
+		}
+
+		function bGCWhite(){
+			let divWhite = document.querySelectorAll('.content');
+			removeHovered(divWhite);
+			divWhite.forEach((divsWhite) => {
+				divsWhite.addEventListener('mouseenter', () => {
+					divsWhite.style.backgroundColor = "#fff";
+				});
+			});
+		}
+
+		function gridDiv(){
+			let grid = 16;
+				for(let a = 0; a < grid; a++)
+					{
+					for(let i = 0; i < grid; i++)
+						{
+						const container = document.querySelector('#container');
+						const content = document.createElement('div');
+						content.classList.add('content');
+						container.appendChild(content);
+
+						content.addEventListener('mouseenter',function() {
+						content.classList.add('backGroundWhite');
+						});
+					}
+				}
+			}
+		gridDiv();
+
+		//remove class for each div of the grid
+		function removeHovered(deleteClass) {
+  			deleteClass.forEach(deleteClassDiv => {
+   			deleteClassDiv.classList.remove('backGroundWhite');
+   			deleteClassDiv.style.backgroundColor = null;
+  			});
+		}
+		
+		const erase = document.querySelector('#erase');
+		erase.addEventListener('click', function(){
+			const squares = document.querySelectorAll("#container div");
+  			removeHovered(squares);
+		});
+
+		//Delete all div in the container
+		function deleteDiv(){
+			while (container.firstChild) {
+  				container.removeChild(container.firstChild);
+			}
+		}
+
+		//Replacing old grid by a new one
+		const newGrid = document.querySelector('#newGrid');
+		newGrid.addEventListener('click', function(){
+			let widthGrid = prompt("Choose a number between 10 and 100 for the grid size!");
+			deleteDiv();
+
+			if(widthGrid > 100 | widthGrid < 10 | isNaN(widthGrid)){
+
+				let widthGrid = prompt("Choose a number between 10 and 100 for the grid size!1");
+				let widthHeight = 512/widthGrid;
+				for(let a = 0; a < widthGrid; a++)
+					{
+					for(let i = 0; i < widthGrid; i++)
+						{
+						const container = document.querySelector('#container');
+						const content = document.createElement('div');
+						content.classList.add('content');
+						content.style.width = widthHeight + 'px';
+						content.style.height = widthHeight + 'px';
+						container.appendChild(content);
+						content.addEventListener('mouseenter',function() {
+						content.classList.add('backGroundWhite');
+						});
+
+						}
+					}
+				
+			} else {
+				let widthHeight = 512/widthGrid;
+				for(let a = 0; a < widthGrid; a++)
+					{
+					for(let i = 0; i < widthGrid; i++)
+						{
+						const container = document.querySelector('#container');
+						const content = document.createElement('div');
+						content.classList.add('content');
+						content.style.width = widthHeight + 'px';
+						content.style.height = widthHeight + 'px';
+						container.appendChild(content);
+						content.addEventListener('mouseenter',function() {
+						content.classList.add('backGroundWhite');
+						});
+
+						}
+					}
+				}
+			});
+
+
+			
+
+		</script>
+	</body>
+</html>

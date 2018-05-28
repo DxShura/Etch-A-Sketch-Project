@@ -1,0 +1,17 @@
+#container{
+	width: 512px;
+	height: 512px;
+}
+.content{
+	width: 32px;
+	height: 32px;
+	background-color: #000;
+	float: right;
+}
+.contentNewGrid{
+	background-color: #000;
+	float: right;
+}
+.backGroundWhite{
+	background-color: #fff !important;
+}
