@@ -1,0 +1,49 @@
+* {
+    box-sizing: border-box;
+}
+body, button{
+	font-family: 'noto Sans', sans-serif;
+	background: $bg;
+	color: $text;
+}
+.wrapper{
+	margin: 0 auto;
+	text-align: center;
+	a{
+		color: $text;
+	}
+	button{
+		border: $text 1px solid;
+		border-radius: 5%;
+		margin-right: .5rem;
+		outline: none;
+		padding: .5rem;
+		transition: .2s;
+		&:hover{
+			background: #525151;
+			transition: .2s;
+		}
+	}
+	.firstTwo, .lastTwo{
+		padding: .5rem 0;
+	}
+	#containerSketch{
+		width: calculRem(300px);
+		height: calculRem(300px);
+		outline: 1px solid $text;
+		margin : 0 auto;
+		.content-sketch{
+			width: calculRem((300px/16));
+			height: calculRem((300px/16));
+			background-color: #000;
+			float: right;
+		}
+		.contentNewGrid{
+			background-color: #000;
+			float: right;
+		}
+		.backGroundWhite{
+			background-color: #fff;
+		}
+	}  
+}

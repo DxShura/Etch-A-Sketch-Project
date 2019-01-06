@@ -1,0 +1,20 @@
+@media screen and (min-width:768px){
+    .wrapper{
+        button{
+            margin: 0 1rem;
+            font-size: 1rem;
+        }
+        .firstTwo, .lastTwo{
+            display: inline-block;
+            padding: 1rem 0;
+        }
+        #containerSketch{
+            width: calculRem(600px);
+            height: calculRem(600px);
+            .content-sketch{
+                width: calculRem((600px/16));
+                height: calculRem((600px/16));
+            }
+        }
+    }
+}

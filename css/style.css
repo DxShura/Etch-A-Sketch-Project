@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body, button {
+  font-family: 'noto Sans', sans-serif;
+  background: #808080;
+  color: #ffffff;
+}
+
+.wrapper {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.wrapper a {
+  color: #ffffff;
+}
+
+.wrapper button {
+  border: #ffffff 1px solid;
+  border-radius: 5%;
+  margin-right: .5rem;
+  outline: none;
+  padding: .5rem;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.wrapper button:hover {
+  background: #525151;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.wrapper .firstTwo, .wrapper .lastTwo {
+  padding: .5rem 0;
+}
+
+.wrapper #containerSketch {
+  width: 18.75rem;
+  height: 18.75rem;
+  outline: 1px solid #ffffff;
+  margin: 0 auto;
+}
+
+.wrapper #containerSketch .content-sketch {
+  width: 1.17188rem;
+  height: 1.17188rem;
+  background-color: #000;
+  float: right;
+}
+
+.wrapper #containerSketch .contentNewGrid {
+  background-color: #000;
+  float: right;
+}
+
+.wrapper #containerSketch .backGroundWhite {
+  background-color: #fff;
+}
+
+@media screen and (min-width: 768px) {
+  .wrapper button {
+    margin: 0 1rem;
+    font-size: 1rem;
+  }
+  .wrapper .firstTwo, .wrapper .lastTwo {
+    display: inline-block;
+    padding: 1rem 0;
+  }
+  .wrapper #containerSketch {
+    width: 37.5rem;
+    height: 37.5rem;
+  }
+  .wrapper #containerSketch .content-sketch {
+    width: 2.34375rem;
+    height: 2.34375rem;
+  }
+}
+/*# sourceMappingURL=style.css.map */
